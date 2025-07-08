@@ -1,7 +1,5 @@
 # Patient Overview Dashboard
 
-![Dashboard Preview](https://placehold.co/1200x600?text=Patient+Dashboard+Screenshot+&font=roboto)
-
 A responsive web application designed to provide clinicians with quick access to critical patient health data from electronic medical records (EMR).
 
 ## Features
