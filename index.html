@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patient Health Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-900">
+  <main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+    <h1 class="text-3xl font-semibold mb-6 text-center sm:text-left">Patient Health Dashboard</h1>
+
+    <section
+      aria-label="Patient Demographic Information"
+      class="bg-white rounded-lg shadow p-6 mb-6 focus-within:ring-2 focus-within:ring-indigo-500"
+    >
+      <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2">Demographic Data</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+          <p class="text-sm font-medium text-gray-600">Full Name</p>
+          <p class="mt-1 text-lg font-semibold text-gray-800" id="patient-name">Jane Alexandra Doe</p>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-gray-600">Date of Birth</p>
+          <p class="mt-1 text-lg font-semibold text-gray-800" id="patient-dob">1985-07-14</p>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-gray-600">Gender / Sex</p>
+          <p class="mt-1 text-lg font-semibold text-gray-800" id="patient-gender">Female</p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      aria-label="Vital Signs from Most Recent Clinical Visit"
+      class="bg-white rounded-lg shadow p-6 mb-6 focus-within:ring-2 focus-within:ring-red-500"
+    >
+      <h2 class="text-xl font-semibold mb-4 border-b border-gray-200 pb-2 text-red-700">Vital Signs</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div class="bg-red-50 rounded-lg p-4 shadow-sm">
+          <div class="text-red-600 text-3xl font-bold" aria-live="polite" aria-atomic="true" id="bp-systolic">120</div>
+          <div class="text-sm font-medium text-red-700">Systolic BP (mmHg)</div>
+        </div>
+        <div class="bg-red-50 rounded-lg p-4 shadow-sm">
+          <div class="text-red-600 text-3xl font-bold" aria-live="polite" aria-atomic="true" id="bp-diastolic">78</div>
+          <div class="text-sm font-medium text-red-700">Diastolic BP (mmHg)</div>
+        </div>
+        <div class="bg-red-50 rounded-lg p-4 shadow-sm">
+          <div class="text-red-600 text-3xl font-bold" aria-live="polite" aria-atomic="true" id="heart-rate">72</div>
+          <div class="text-sm font-medium text-red-700">Heart Rate (bpm)</div>
+        </div>
+        <div class="bg-red-50 rounded-lg p-4 shadow-sm">
+          <div class="text-red-600 text-3xl font-bold" aria-live="polite" aria-atomic="true" id="oxygen-saturation">98%</div>
+          <div class="text-sm font-medium text-red-700">Oxygen Saturation</div>
+        </div>
+        <div class="bg-red-50 rounded-lg p-4 shadow-sm col-span-2 sm:col-span-4">
+          <div class="text-red-600 text-3xl font-bold" aria-live="polite" aria-atomic="true" id="temperature">36.7°C</div>
+          <div class="text-sm font-medium text-red-700">Temperature</div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      aria-label="Diagnosis History Timeline"
+      class="bg-white rounded-lg shadow p-6 focus-within:ring-2 focus-within:ring-indigo-600"
+    >
+      <h2 class="text-xl font-semibold mb-6 border-b border-gray-200 pb-2">Diagnosis History</h2>
+      <ol class="relative border-l border-gray-300 ml-4 sm:ml-8" role="list" aria-live="polite" aria-atomic="true">
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2024-05-20</time>
+          <h3 class="text-lg font-semibold text-gray-900">Type 2 Diabetes Mellitus</h3>
+          <p class="mb-4 text-gray-700">Patient diagnosed with Type 2 Diabetes Mellitus, managed with medication and lifestyle changes.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2023-12-15</time>
+          <h3 class="text-lg font-semibold text-gray-900">Hypertension</h3>
+          <p class="mb-4 text-gray-700">Diagnosed with hypertension, currently controlled with medication.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2023-08-10</time>
+          <h3 class="text-lg font-semibold text-gray-900">Seasonal Allergies</h3>
+          <p class="mb-4 text-gray-700">Patient reports seasonal allergic rhinitis symptoms, managed with antihistamines.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2023-04-22</time>
+          <h3 class="text-lg font-semibold text-gray-900">Hyperlipidemia</h3>
+          <p class="mb-4 text-gray-700">Elevated cholesterol levels noted, started on statin therapy.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2022-11-30</time>
+          <h3 class="text-lg font-semibold text-gray-900">Asthma</h3>
+          <p class="mb-4 text-gray-700">Mild intermittent asthma diagnosed, using inhaler as needed.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2022-07-18</time>
+          <h3 class="text-lg font-semibold text-gray-900">Iron Deficiency Anemia</h3>
+          <p class="mb-4 text-gray-700">Diagnosed with iron deficiency anemia, started iron supplementation.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2022-03-05</time>
+          <h3 class="text-lg font-semibold text-gray-900">Gastroesophageal Reflux Disease (GERD)</h3>
+          <p class="mb-4 text-gray-700">Chronic GERD symptoms managed with proton pump inhibitors.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2021-12-12</time>
+          <h3 class="text-lg font-semibold text-gray-900">Migraine</h3>
+          <p class="mb-4 text-gray-700">Recurrent migraine headaches, managed with abortive therapy.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2021-08-01</time>
+          <h3 class="text-lg font-semibold text-gray-900">Osteoarthritis</h3>
+          <p class="mb-4 text-gray-700">Mild osteoarthritis of the knees, managed with physical therapy.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2021-04-15</time>
+          <h3 class="text-lg font-semibold text-gray-900">Seasonal Influenza</h3>
+          <p class="mb-4 text-gray-700">Diagnosed with seasonal influenza, treated with antivirals.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2020-11-20</time>
+          <h3 class="text-lg font-semibold text-gray-900">Urinary Tract Infection</h3>
+          <p class="mb-4 text-gray-700">Acute UTI treated with antibiotics, resolved.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2020-07-10</time>
+          <h3 class="text-lg font-semibold text-gray-900">Vitamin D Deficiency</h3>
+          <p class="mb-4 text-gray-700">Vitamin D deficiency diagnosed, started supplementation.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2020-03-25</time>
+          <h3 class="text-lg font-semibold text-gray-900">Anxiety Disorder</h3>
+          <p class="mb-4 text-gray-700">Generalized anxiety disorder diagnosed, managed with therapy and medication.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <span
+            class="absolute -left-3 flex items-center justify-center w-6 h-6 bg-indigo-600 rounded-full ring-8 ring-white"
+            aria-hidden="true"
+          >
+            <i class="fas fa-notes-medical text-white text-sm"></i>
+          </span>
+          <time class="mb-1 text-sm font-normal leading-none text-gray-500">2019-12-05</time>
+          <h3 class="text-lg font-semibold text-gray-900">Seasonal Allergies</h3>
+          <p class="mb-4 text-gray-700">Initial diagnosis of seasonal allergic rhinitis.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
